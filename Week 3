@@ -1,0 +1,19 @@
+🧭 Week 3 — Gate-Level Simulation (GLS) & Static Timing Analysis (STA)
+
+This week explored how a synthesized design is verified both functionally and temporally before moving toward physical implementation. After functional validation at the 
+RTL level, two key processes ensure that synthesis has neither changed behavior nor violated timing requirements — Gate-Level Simulation (GLS) and Static Timing Analysis (STA).
+
+Gate-Level Simulation re-simulates the synthesized netlist using the same testbench that verified the RTL. This confirms that logic optimizations or technology mapping 
+during synthesis have not altered the intended function. The resulting waveform, now generated from standard-cell primitives with timing delays, should match the original 
+RTL output if synthesis integrity is maintained.
+
+Static Timing Analysis, in contrast, does not rely on test vectors. Instead, it mathematically inspects every timing path in the netlist against defined clock and 
+constraint information. By reporting parameters such as setup and hold violations, total negative slack (TNS), and worst negative slack (WNS), STA determines whether 
+the design can operate reliably at its target clock frequency.
+
+Together, GLS and STA form the verification bridge between logical correctness and timing closure. GLS ensures functional equivalence, while STA ensures temporal soundness.
+These steps are indispensable for robust ASIC and SoC design, and tools like Yosys, OpenSTA, Icarus Verilog, and GTKWave make it possible to perform them entirely within 
+an open-source environment.
+
+The week’s exercises provided practical insight into how synthesis artifacts are validated, how timing reports reveal performance limits, and why both functional and timing 
+verification are essential before physical design begins.
